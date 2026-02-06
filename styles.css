@@ -1,0 +1,351 @@
+:root{
+  --bg:#0e1317;
+  --panel:#161c22;
+  --panel2:#0b0f13;
+  --text:#f1f5f9;
+  --muted:#a7b0bc;
+  --soft:#7f91ad;
+  --accent:#1f6f4a;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+  --radius:16px;
+  --radius2:22px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+
+a{ color:inherit; text-decoration:none; }
+strong{ font-weight:800; }
+.container{ width:min(1120px, 92%); margin:auto; }
+
+.muted{ color:var(--muted); }
+.tiny{ font-size:.86rem; }
+.dot{ color:rgba(255,255,255,.25); padding:0 .35rem; }
+
+.topbar{
+  border-bottom:1px solid var(--line);
+  background: var(--panel2);
+}
+.topbar__inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:.75rem;
+  flex-wrap:wrap;
+  padding:.65rem 0;
+}
+.topbar__left, .topbar__right{ display:flex; gap:.7rem; align-items:center; flex-wrap:wrap; }
+.pill{
+  border:1px solid var(--line);
+  padding:.25rem .6rem;
+  border-radius:999px;
+  font-size:.85rem;
+}
+.toplink{ color:var(--muted); font-weight:700; }
+.toplink:hover{ color:var(--text); }
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background: rgba(14,19,23,.95);
+  border-bottom:1px solid var(--line);
+}
+.header__inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:.9rem 0;
+  flex-wrap:wrap;
+}
+
+.brand{
+  display:flex;
+  gap:.75rem;
+  align-items:center;
+}
+.brand__mark{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background: var(--accent);
+  color:#07140d;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+.brand__text small{
+  display:block;
+  color:var(--muted);
+  margin-top:.15rem;
+}
+
+/* Optional image logo if you use verdia-logo.png */
+.brand__logo{
+  width:44px;
+  height:44px;
+  object-fit:contain;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.nav a{
+  color:var(--muted);
+  font-weight:700;
+  font-size:.95rem;
+}
+.nav a:hover{ color:var(--text); }
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.78rem 1.05rem;
+  border-radius:999px;
+  background: var(--accent);
+  color:#07140d;
+  font-weight:900;
+  border:1px solid rgba(31,111,74,.5);
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn--ghost{
+  background: transparent;
+  color: var(--text);
+  border:1px solid rgba(31,111,74,.75);
+}
+.btn--small{ padding:.5rem .85rem; }
+.btn--wide{ width:100%; }
+
+.section{ padding:4rem 0; }
+.section--alt{
+  background: var(--panel2);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.section__head{ margin-bottom:1.6rem; }
+.section__head h2{ margin:0 0 .35rem; }
+
+.grid2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  align-items:start;
+}
+
+.hero{
+  padding: 3.8rem 0 3rem;
+  /* Desktop hero image */
+  background:
+    linear-gradient(rgba(14,19,23,.62), rgba(14,19,23,.88)),
+    url("hero-sisal-bales-desktop.jpg") center/cover no-repeat;
+}
+.hero__inner{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 2rem;
+  align-items:center;
+}
+.hero h1{
+  margin:0 0 .8rem;
+  font-size: clamp(2rem, 3.2vw, 3.15rem);
+  line-height:1.1;
+}
+.lead{
+  color:var(--muted);
+  font-size:1.06rem;
+  max-width: 62ch;
+}
+.hero__cta{ display:flex; gap:.85rem; flex-wrap:wrap; margin:1.2rem 0 1.1rem; }
+
+.hero__stats{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: .85rem;
+  margin-top: 1.1rem;
+}
+.stat{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(0,0,0,.22);
+  padding: .95rem;
+}
+.stat strong{ display:block; }
+.stat span{ color:var(--muted); font-size:.92rem; }
+
+.hero__card{
+  border:1px solid var(--line);
+  border-radius: var(--radius2);
+  background: rgba(22,28,34,.86);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+.hero__card h3{ margin:.2rem 0 .6rem; }
+.list{ margin:.2rem 0 0; padding-left:1.15rem; color:var(--muted); }
+.list li{ margin:.42rem 0; }
+
+.contact-mini{
+  margin: 1rem 0 .85rem;
+  padding: .85rem;
+  border-radius: var(--radius);
+  border:1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.18);
+}
+.contact-mini__row{ margin-top:.25rem; }
+
+.link{
+  color: rgba(190, 225, 206, 1);
+  font-weight:900;
+}
+.link:hover{ text-decoration: underline; }
+
+.bullets{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: .9rem;
+  margin-top: 1.2rem;
+}
+.bullet{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .9rem;
+  background: rgba(255,255,255,.03);
+}
+.bullet strong{ display:block; margin-bottom:.15rem; }
+.bullet span{ color:var(--muted); font-size:.95rem; }
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1rem;
+}
+.card{
+  border:1px solid var(--line);
+  border-radius: var(--radius2);
+  background: rgba(22,28,34,.75);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+.card h3{ margin:.2rem 0 .5rem; }
+.card p{ color:var(--muted); margin:0 0 .9rem; }
+
+.panel{
+  border:1px solid var(--line);
+  border-radius: var(--radius2);
+  background: rgba(22,28,34,.75);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.info{
+  border:1px solid var(--line);
+  border-radius: var(--radius2);
+  background: rgba(255,255,255,.03);
+  overflow:hidden;
+  margin: 1rem 0;
+}
+.info__row{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.85rem 1rem;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.info__row:first-child{ border-top:none; }
+.info__row span{ color:var(--muted); }
+
+.steps{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 1rem;
+}
+.step{
+  border:1px solid var(--line);
+  border-radius: var(--radius2);
+  background: rgba(22,28,34,.75);
+  padding: 1.1rem;
+}
+.step__num{
+  width:34px;
+  height:34px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+  background: rgba(31,111,74,.25);
+  border:1px solid rgba(31,111,74,.55);
+  font-weight:900;
+  margin-bottom:.7rem;
+}
+.step h3{ margin:.1rem 0 .35rem; }
+.step p{ margin:0; color:var(--muted); }
+
+.cta-card{
+  border: 1px solid rgba(31,111,74,.45);
+  background: linear-gradient(180deg, rgba(31,111,74,.16), rgba(22,28,34,.75));
+  border-radius: var(--radius2);
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+}
+
+.copybox{
+  border:1px solid var(--line);
+  border-radius: var(--radius2);
+  background: rgba(0,0,0,.30);
+  padding: 1rem;
+  overflow:auto;
+}
+pre{ margin:0; white-space:pre; }
+code{
+  color: #dfe9ff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:.95rem;
+}
+
+.footer{
+  border-top:1px solid var(--line);
+  padding: 1.6rem 0;
+  background: var(--panel2);
+}
+.footer__inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+/* Mobile hero background swap */
+@media (max-width: 768px){
+  .hero{
+    background:
+      linear-gradient(rgba(14,19,23,.70), rgba(14,19,23,.92)),
+      url("hero-sisal-bales-mobile.jpg") center/cover no-repeat;
+    padding: 3rem 0 2.4rem;
+  }
+}
+
+/* Responsive grids */
+@media (max-width: 980px){
+  .hero__inner{ grid-template-columns: 1fr; }
+  .hero__stats{ grid-template-columns: 1fr; }
+  .grid2{ grid-template-columns: 1fr; }
+  .cards{ grid-template-columns: 1fr; }
+  .steps{ grid-template-columns: 1fr 1fr; }
+  .bullets{ grid-template-columns: 1fr; }
+}
+@media (max-width: 520px){
+  .steps{ grid-template-columns: 1fr; }
+}
